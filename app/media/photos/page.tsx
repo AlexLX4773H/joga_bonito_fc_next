@@ -20,7 +20,7 @@ export default function PhotosPage() {
     },
     {
       id: "2",
-      src: "https://lxsoft.site/Joga_photos/training_session_1.jpg",
+      src: "https://lxsoft.site/Joga_photos/joga_full_squad.jpg",
       alt: "Training session",
       category: "training",
       caption: "Players working on tactical drills during training",
@@ -48,7 +48,7 @@ export default function PhotosPage() {
     },
     {
       id: "6",
-      src: "https://lxsoft.site/Joga_photos/player_portrait_1.jpg",
+      src: "https://lxsoft.site/Joga_photos/Faris_Thatu.jpg",
       alt: "Player portrait",
       category: "portraits",
       caption: "Official portrait of our captain",
