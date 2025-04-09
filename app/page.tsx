@@ -117,14 +117,14 @@ export default function Home() {
               duration="2:45"
               views="124K"
               date="3 days ago"
-              youtubeId="8Z0sbekoQL4" // Roberto Carlos free kick
+              youtubeId="_xZn02Q9yY8" // Roberto Carlos free kick
             />
             <VideoCard
               title="Match Highlights: Joga Bonito vs. United"
               duration="8:12"
               views="87K"
               date="1 week ago"
-              youtubeId="fW_a3qs_m3M" // Brazil vs France 2006
+              youtubeId="Av6w8xCIhXY" // Brazil vs France 2006
             />
             <VideoCard
               title="Top 10 Goals of the Season"
