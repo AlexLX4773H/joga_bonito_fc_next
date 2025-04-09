@@ -34,7 +34,7 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 
 # Expose the port Next.js runs on
-EXPOSE 4000
+EXPOSE 3000
 
 # Start the Next.js server
 CMD ["pnpm", "start"]
