@@ -45,4 +45,3 @@ export function PromotionalVideo({ title, description, thumbnail, youtubeId }: P
     </>
   )
 }
-

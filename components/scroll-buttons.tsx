@@ -49,4 +49,3 @@ export function ScrollButtons({ scrollContainerId, scrollAmount = 600 }: ScrollB
     </>
   )
 }
-

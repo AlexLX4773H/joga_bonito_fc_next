@@ -51,4 +51,3 @@ export function YouTubePlayer({ videoId, isOpen, onClose, title }: YouTubePlayer
     </Dialog>
   )
 }
-
