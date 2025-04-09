@@ -48,3 +48,9 @@ CMD ["pnpm", "start"]
 docker build -t nextjs-app .
 docker run -p 4000:4000 nextjs-app
 ```
+To run locally:
+
+1. pnpm i
+2. pnpm dev
+3. pnpm build
+4. pnpm run
