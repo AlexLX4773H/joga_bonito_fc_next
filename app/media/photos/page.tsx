@@ -13,7 +13,7 @@ export default function PhotosPage() {
   const galleryPhotos = [
     {
       id: "1",
-      src: "https://lxsoft.site/Joga_photos/match_action_1.jpg",
+      src: "https://lxsoft.site/Joga_photos/faris_varun.jpg",
       alt: "Match action shot",
       category: "match",
       caption: "Intense action during our match against Rivals FC",
