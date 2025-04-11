@@ -64,8 +64,8 @@ export function MainNav({ className, ...props }: MainNavProps) {
               <ListItem href="/media/highlights" title="Match Highlights">
                 Watch the best moments from our recent matches
               </ListItem>
-              <ListItem href="/media/interviews" title="Interviews">
-                Exclusive interviews with players and staff
+              <ListItem href="/media/profiles" title="Player Profiles">
+                Get to know our players through exclusive videos
               </ListItem>
               <ListItem href="/media/photos" title="Photo Gallery">
                 Official match and training photos

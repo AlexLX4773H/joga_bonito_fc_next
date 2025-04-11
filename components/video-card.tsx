@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Play, Clock, Eye, Calendar } from "lucide-react"
+import { Play, Clock, Eye, Calendar, Maximize2 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { YouTubePlayer } from "@/components/youtube-player"
+import { isPortraitAspectRatio } from "@/lib/aspect-ratio"
 
 interface VideoCardProps {
   title: string
@@ -17,6 +18,7 @@ interface VideoCardProps {
   playerImage?: string
   playerName?: string
   playerPosition?: string
+  aspectRatio?: string
 }
 
 export function VideoCard({
@@ -29,8 +31,10 @@ export function VideoCard({
   playerImage,
   playerName,
   playerPosition,
+  aspectRatio = "16:9",
 }: VideoCardProps) {
   const [isPlayerOpen, setIsPlayerOpen] = useState(false)
+  const isPortrait = isPortraitAspectRatio(aspectRatio)
 
   // Use YouTube thumbnail if no custom thumbnail is provided
   const videoThumbnail = thumbnail || `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
@@ -59,6 +63,14 @@ export function VideoCard({
                 <div className="font-bold">{playerName}</div>
                 <div className="text-white/80 text-[10px]">{playerPosition}</div>
               </div>
+            </div>
+          )}
+
+          {/* Aspect ratio indicator */}
+          {aspectRatio && aspectRatio !== "16:9" && (
+            <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-black/60 px-2 py-1 text-xs text-white">
+              <Maximize2 className="h-3 w-3" />
+              <span>{isPortrait ? "Portrait" : aspectRatio}</span>
             </div>
           )}
 
@@ -91,7 +103,13 @@ export function VideoCard({
           </div>
         </CardContent>
       </Card>
-      <YouTubePlayer videoId={youtubeId} isOpen={isPlayerOpen} onClose={() => setIsPlayerOpen(false)} title={title} />
+      <YouTubePlayer
+        videoId={youtubeId}
+        isOpen={isPlayerOpen}
+        onClose={() => setIsPlayerOpen(false)}
+        title={title}
+        aspectRatio={aspectRatio}
+      />
     </>
   )
 }

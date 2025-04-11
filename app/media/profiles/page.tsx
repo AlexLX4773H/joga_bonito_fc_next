@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button"
 import { getVideosByCategory } from "@/data/videos"
 
 export const metadata = {
-  title: "Match Highlights | Joga Bonito FC",
-  description: "Watch the best moments from our recent matches",
+  title: "Player Profiles | Joga Bonito FC",
+  description: "Get to know our players through exclusive profile videos",
 }
 
-export default function HighlightsPage() {
-  // Get all highlight videos from our data
-  const highlightVideos = getVideosByCategory("highlights")
+export default function PlayerProfilesPage() {
+  // Get all player profile videos from our data
+  const profileVideos = getVideosByCategory("profiles")
 
   return (
     <div className="container py-8 md:py-12">
@@ -22,11 +22,11 @@ export default function HighlightsPage() {
             Back to Home
           </Link>
         </Button>
-        <h1 className="text-3xl font-bold">Match Highlights</h1>
+        <h1 className="text-3xl font-bold">Player Profiles</h1>
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {highlightVideos.map((video) => (
+        {profileVideos.map((video) => (
           <VideoCard
             key={video.id}
             title={video.title}
@@ -35,6 +35,9 @@ export default function HighlightsPage() {
             date={video.date}
             youtubeId={video.youtubeId}
             thumbnail={video.thumbnail}
+            playerImage={video.playerImage}
+            playerName={video.playerName}
+            playerPosition={video.playerPosition}
             aspectRatio={video.aspectRatio}
           />
         ))}

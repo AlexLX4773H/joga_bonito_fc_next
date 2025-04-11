@@ -15,8 +15,16 @@ import { ScrollButtons } from "@/components/scroll-buttons"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { PromotionalVideo } from "@/components/promotional-video"
 import { JerseyShowcase } from "@/components/jersey-showcase"
+import { getVideosByCategory } from "@/data/videos"
 
+// Inside your Home component:
 export default function Home() {
+  // Get the first 3 highlight videos for the featured section
+  const featuredHighlights = getVideosByCategory("highlights").slice(0, 3)
+
+  // Get the first 2 promotional videos for the promotional section
+  const featuredPromotional = getVideosByCategory("promotional").slice(0, 2)
+
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b border-club-gold bg-club-black text-white backdrop-blur supports-[backdrop-filter]:bg-black/80">
@@ -96,6 +104,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Highlights Section */}
         <section className="container py-12 md:py-16 lg:py-20">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div>
@@ -111,28 +120,20 @@ export default function Home() {
               </Link>
             </Button>
           </div>
+          {/* Inside the Home component where we render the featured videos */}
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <VideoCard
-              title="Amazing Free Kick Goal vs. Rivals FC"
-              duration="2:45"
-              views="124K"
-              date="3 days ago"
-              youtubeId="_xZn02Q9yY8" // Roberto Carlos free kick
-            />
-            <VideoCard
-              title="Match Highlights: Joga Bonito vs. United"
-              duration="8:12"
-              views="87K"
-              date="1 week ago"
-              youtubeId="Av6w8xCIhXY" // Brazil vs France 2006
-            />
-            <VideoCard
-              title="Top 10 Goals of the Season"
-              duration="5:30"
-              views="203K"
-              date="2 weeks ago"
-              youtubeId="vl5boGDZUGE" // Ronaldinho skills
-            />
+            {featuredHighlights.map((video) => (
+              <VideoCard
+                key={video.id}
+                title={video.title}
+                duration={video.duration}
+                views={video.views}
+                date={video.date}
+                youtubeId={video.youtubeId}
+                thumbnail={video.thumbnail}
+                aspectRatio={video.aspectRatio}
+              />
+            ))}
           </div>
         </section>
 
@@ -217,9 +218,9 @@ export default function Home() {
                         <PlayerCard
                           name="Ryan"
                           position="Forward"
-                          age={"2?"}
+                          age={"?"}
                           nationality="India"
-                          transferFee="€5M"
+                          transferFee="Kure"
                           images={["https://lxsoft.site/Joga_photos/Ryan_joga.jpg"]}
                           number={6}
                         />
@@ -359,6 +360,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Promotional Videos Section */}
         <section className="container py-12 md:py-16 lg:py-20">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Promotional Videos</h2>
@@ -366,17 +368,18 @@ export default function Home() {
               Exclusive content showcasing our club culture, community initiatives, and special events
             </p>
           </div>
+          {/* And update the PromotionalVideo components */}
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
-            <PromotionalVideo
-              title="New Season Kit Launch"
-              description="Unveiling our stunning new home and away kits for the upcoming season"
-              youtubeId="Oj6L6Ibv8VI" // Nike football ad
-            />
-            <PromotionalVideo
-              title="Training Facilities Tour"
-              description="Explore our state-of-the-art training complex where champions are made"
-              youtubeId="YePFGhCC7ro" // Training facility tour
-            />
+            {featuredPromotional.map((video) => (
+              <PromotionalVideo
+                key={video.id}
+                title={video.title}
+                description={video.title}
+                youtubeId={video.youtubeId}
+                thumbnail={video.thumbnail}
+                aspectRatio={video.aspectRatio}
+              />
+            ))}
           </div>
         </section>
 
