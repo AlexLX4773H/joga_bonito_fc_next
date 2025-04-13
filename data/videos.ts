@@ -17,83 +17,83 @@ export const videos: VideoData[] = [
   // Highlights Videos
   {
     id: "hl-1",
-    title: "Amazing Free Kick Goal vs. Rivals FC",
-    duration: "2:45",
+    title: "Manager Faris Training Rituals",
+    duration: "0:28",
     views: "124K",
     date: "3 days ago",
-    youtubeId: "_xZn02Q9yY8", // Roberto Carlos free kick
+    youtubeId: "1cvWc29_T_4", // Roberto Carlos free kick
     category: "highlights",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
   },
   {
     id: "hl-2",
-    title: "Match Highlights: Joga Bonito vs. United",
-    duration: "8:12",
+    title: "Manager Faris Football Skills",
+    duration: "0:21",
     views: "87K",
     date: "1 week ago",
-    youtubeId: "Av6w8xCIhXY", // Brazil vs France 2006
+    youtubeId: "fByNs_PGfzM", // Brazil vs France 2006
     category: "highlights",
     aspectRatio: "9:16",
   },
   {
     id: "hl-3",
-    title: "Top 10 Goals of the Season",
-    duration: "5:30",
+    title: "A Day In The Life Of A Football Manager",
+    duration: "0:48",
     views: "203K",
     date: "2 weeks ago",
-    youtubeId: "vl5boGDZUGE", // Ronaldinho skills
+    youtubeId: "rvwDMmRREpo", // Ronaldinho skills
     category: "highlights",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
   },
   {
     id: "hl-4",
-    title: "Last Minute Winner in Derby Match",
-    duration: "3:15",
+    title: "Joga Bonito Football News Live Match Updates",
+    duration: "1:00",
     views: "92K",
     date: "3 weeks ago",
-    youtubeId: "6WU1LZ_9Ld4", // Last minute goals
+    youtubeId: "ngntIX1QQ_g", // Last minute goals
     category: "highlights",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
   },
   {
     id: "hl-5",
-    title: "Goalkeeper's Incredible Double Save",
-    duration: "1:45",
+    title: "G.O.A.T Manager Faris",
+    duration: "0:28",
     views: "56K",
     date: "1 month ago",
-    youtubeId: "yGqfo8nfJnM", // Goalkeeper saves
+    youtubeId: "q18kYsW5ShE", // Goalkeeper saves
     category: "highlights",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
   },
   {
     id: "hl-6",
-    title: "Youth Academy Talent Showcase",
-    duration: "6:20",
+    title: "Manager Faris Training For Goku",
+    duration: "0:15",
     views: "43K",
     date: "1 month ago",
-    youtubeId: "DYMDkx1qHkk", // Young talents
+    youtubeId: "Jb9BkhmNksk", // Young talents
     category: "highlights",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
   },
   {
     id: "hl-7",
-    title: "Season Opening Match Highlights",
-    duration: "9:30",
+    title: "Manager Faris Comeback - Haters Will Say",
+    duration: "0:26",
     views: "112K",
     date: "2 months ago",
-    youtubeId: "ztFHI3_pmIg", // Match highlights
+    youtubeId: "P0XvlX0WZQc", // Match highlights
     category: "highlights",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
   },
   {
     id: "hl-8",
-    title: "Captain's Hat-trick Performance",
-    duration: "4:15",
+    title: "Manager Faris Giving Antony Vibes - Aura",
+    duration: "0:17",
     views: "78K",
     date: "2 months ago",
-    youtubeId: "OYa3V7GIizI", // Hat-trick compilation
+    youtubeId: "Ay6giyfPq1Q", // Hat-trick compilation
     category: "highlights",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
   },
   {
     id: "hl-9",
