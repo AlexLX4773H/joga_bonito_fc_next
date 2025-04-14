@@ -5,27 +5,20 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { PhotoModal } from "@/components/photo-modal"
-
-interface Photo {
-  id: string
-  src: string
-  alt: string
-  category: string
-  caption?: string
-}
+import type { PhotoData } from "@/data/photos"
 
 interface PhotoGalleryProps {
-  photos: Photo[]
+  photos: PhotoData[]
 }
 
 export function PhotoGallery({ photos }: PhotoGalleryProps) {
-  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null)
+  const [selectedPhoto, setSelectedPhoto] = useState<PhotoData | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   // Get unique categories from photos
   const categories = ["all", ...Array.from(new Set(photos.map((photo) => photo.category)))]
 
-  const openPhotoModal = (photo: Photo) => {
+  const openPhotoModal = (photo: PhotoData) => {
     setSelectedPhoto(photo)
     setIsModalOpen(true)
   }
@@ -35,7 +28,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
   }
 
   // Get next and previous photos for navigation
-  const getAdjacentPhotos = (currentPhoto: Photo) => {
+  const getAdjacentPhotos = (currentPhoto: PhotoData) => {
     const currentIndex = photos.findIndex((photo) => photo.id === currentPhoto.id)
     const nextPhoto = currentIndex < photos.length - 1 ? photos[currentIndex + 1] : photos[0]
     const prevPhoto = currentIndex > 0 ? photos[currentIndex - 1] : photos[photos.length - 1]

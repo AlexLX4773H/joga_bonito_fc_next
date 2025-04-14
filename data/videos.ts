@@ -31,9 +31,39 @@ export const videos: VideoData[] = [
     duration: "0:21",
     views: "87K",
     date: "1 week ago",
-    youtubeId: "fByNs_PGfzM", // Brazil vs France 2006
+    youtubeId: "fByNs_PGfzM", // Brazil vs France
     category: "highlights",
     aspectRatio: "9:16",
+  },
+  {
+    id: "hl-10",
+    title: "Joga Bonito Football Match Highlights 03",
+    duration: "7:19",
+    views: "8K",
+    date: "1 week ago",
+    youtubeId: "1ecdeS4rMbs", // Brazil vs France 2006
+    category: "highlights",
+    aspectRatio: "16:9",
+  },
+  {
+    id: "hl-11",
+    title: "Joga Bonito Football Match Highlights 02",
+    duration: "7:40",
+    views: "7K",
+    date: "1 week ago",
+    youtubeId: "SJblfkE1A-4", // Brazil vs France 2006
+    category: "highlights",
+    aspectRatio: "16:9",
+  },
+  {
+    id: "hl-12",
+    title: "Joga Bonito Football Match Highlights 01",
+    duration: "10:10",
+    views: "6K",
+    date: "1 week ago",
+    youtubeId: "EexGQ76ga9Y", // Brazil vs France 2006
+    category: "highlights",
+    aspectRatio: "16:9",
   },
   {
     id: "hl-3",
@@ -97,13 +127,63 @@ export const videos: VideoData[] = [
   },
   {
     id: "hl-9",
-    title: "International Friendly Highlights",
-    duration: "7:45",
+    title: "Manager Faris vs Zlatan Ibrahimović",
+    duration: "0:33",
     views: "65K",
     date: "3 months ago",
-    youtubeId: "TG9NQrp6uWQ", // International match
+    youtubeId: "Rhp-1hu6g-o", // International match
     category: "highlights",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
+  },
+  {
+    id: "hl-20",
+    title: "Farewell Manager Faris",
+    duration: "0:29",
+    views: "12K",
+    date: "1 months ago",
+    youtubeId: "zdjzeVhG3ts", 
+    category: "highlights",
+    aspectRatio: "9:16",
+  },
+  {
+    id: "hl-21",
+    title: "Ryan Jersey No 6, A Star In The Making",
+    duration: "0:19",
+    views: "11K",
+    date: "1 months ago",
+    youtubeId: "Ws0t4FrZC0o", 
+    category: "highlights",
+    aspectRatio: "9:16",
+  },
+  {
+    id: "hl-22",
+    title: "Joga Bonito FC Jersey Launch",
+    duration: "0:29",
+    views: "11K",
+    date: "1 months ago",
+    youtubeId: "llx1j_iiT-4", 
+    category: "highlights",
+    aspectRatio: "9:16",
+  },
+  {
+    id: "hl-23",
+    title: "Jojo Jersey No 17 Football Wizardry",
+    duration: "1:01",
+    views: "6K",
+    date: "1 months ago",
+    youtubeId: "2hC-QPnXXE4", 
+    category: "highlights",
+    aspectRatio: "9:16",
+  },
+  {
+    id: "hl-24",
+    title: "Unleash The Beauty: Joga Bonito FC Promo",
+    duration: "0:50",
+    views: "1K",
+    date: "1 months ago",
+    youtubeId: "hYp8zYGKHgo", 
+    category: "highlights",
+    aspectRatio: "9:16",
   },
 
   // Player Profile Videos
@@ -168,9 +248,9 @@ export const videos: VideoData[] = [
     duration: "2:30",
     views: "112K",
     date: "1 month ago",
-    youtubeId: "Oj6L6Ibv8VI", // Nike football ad
+    youtubeId: "llx1j_iiT-4", // Nike football ad
     category: "promotional",
-    aspectRatio: "16:9",
+    aspectRatio: "9:16",
   },
   {
     id: "promo-2",

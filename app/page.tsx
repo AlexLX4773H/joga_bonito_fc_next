@@ -16,6 +16,9 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { PromotionalVideo } from "@/components/promotional-video"
 import { JerseyShowcase } from "@/components/jersey-showcase"
 import { getVideosByCategory } from "@/data/videos"
+import { getPlayersByStatus } from "@/data/players"
+import { FeaturedPhotos } from "@/components/featured-photos"
+import { getFeaturedPhotos } from "@/data/photos"
 
 // Inside your Home component:
 export default function Home() {
@@ -24,6 +27,9 @@ export default function Home() {
 
   // Get the first 2 promotional videos for the promotional section
   const featuredPromotional = getVideosByCategory("promotional").slice(0, 2)
+
+  // Get featured photos for the gallery section
+  const featuredPhotos = getFeaturedPhotos(6)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -175,89 +181,20 @@ export default function Home() {
                     className="flex overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4"
                   >
                     <div className="flex gap-6">
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Siva Sankaran"
-                          position="Forward"
-                          age={26}
-                          nationality="India"
-                          transferFee="15 Chaya"
-                          images={[
-                            "https://lxsoft.site/Joga_photos/siva_joga.jpg",
-                            "https://lxsoft.site/Joga_photos/siva_joga_2.jpg",
-                          ]}
-                          number={19}
-                        />
-                      </div>
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Jojo Joyel"
-                          position="Midfielder"
-                          age={26}
-                          nationality="India"
-                          transferFee="12 Chaya"
-                          images={[
-                            "https://lxsoft.site/Joga_photos/jojo_joga.jpg",
-                            "https://lxsoft.site/Joga_photos/jojo_joga_2.jpg",
-                          ]}
-                          number={17}
-                        />
-                      </div>
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Alex"
-                          position="Goalkeeper"
-                          age={27}
-                          nationality="India"
-                          transferFee="8 Lime"
-                          images={["https://lxsoft.site/Joga_photos/Alex_Joga.jpg"]}
-                          number={1}
-                        />
-                      </div>
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Ryan"
-                          position="Forward"
-                          age={"?"}
-                          nationality="India"
-                          transferFee="Kure"
-                          images={["https://lxsoft.site/Joga_photos/Ryan_joga.jpg"]}
-                          number={6}
-                        />
-                      </div>
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Shanks"
-                          position="Defender"
-                          age={26}
-                          nationality="Saudi"
-                          transferFee="5 Chaya"
-                          images={["https://lxsoft.site/Joga_photos/Shanks_joga.jpg"]}
-                          number={8}
-                        />
-                      </div>
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Faris"
-                          position="Manager"
-                          age={26}
-                          nationality="Germany"
-                          transferFee="50 Yoga"
-                          images={["https://lxsoft.site/Joga_photos/Faris_Thatu.jpg"]}
-                          number={14}
-                        />
-                      </div>
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Vinayak"
-                          position="Forward"
-                          age={"?"}
-                          nationality="India"
-                          transferFee="15 Chaya no-sugar"
-                          images={["https://lxsoft.site/Joga_photos/joga_vinayak.jpg"]}
-                          number={7}
-                        />
-                      </div>
+                      {getPlayersByStatus("current").map((player) => (
+                        <div key={player.id} className="min-w-[280px] snap-start">
+                          <PlayerCard
+                            name={player.name}
+                            position={player.position}
+                            age={player.age}
+                            nationality={player.nationality}
+                            previousClub={player.previousClub || ""}
+                            transferFee={player.transferFee}
+                            images={player.images}
+                            number={player.number}
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <ScrollButtons scrollContainerId="incoming-scroll" />
@@ -270,32 +207,21 @@ export default function Home() {
                     className="flex overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4"
                   >
                     <div className="flex gap-6">
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Roberto Carlos"
-                          position="Left Back"
-                          age={32}
-                          nationality="Brazil"
-                          previousClub="Joga Bonito FC"
-                          transferFee="€7M"
-                          images={["/placeholder.svg?height=400&width=300", "/placeholder.svg?height=400&width=300"]}
-                          newClub="Madrid Stars"
-                          number={3}
-                        />
-                      </div>
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="David Johnson"
-                          position="Striker"
-                          age={29}
-                          nationality="England"
-                          previousClub="Joga Bonito FC"
-                          transferFee="€10M"
-                          images={["/placeholder.svg?height=400&width=300", "/placeholder.svg?height=400&width=300"]}
-                          newClub="London United"
-                          number={11}
-                        />
-                      </div>
+                      {getPlayersByStatus("outgoing").map((player) => (
+                        <div key={player.id} className="min-w-[280px] snap-start">
+                          <PlayerCard
+                            name={player.name}
+                            position={player.position}
+                            age={player.age}
+                            nationality={player.nationality}
+                            previousClub={player.previousClub || ""}
+                            transferFee={player.transferFee}
+                            images={player.images}
+                            newClub={player.newClub}
+                            number={player.number}
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <ScrollButtons scrollContainerId="outgoing-scroll" />
@@ -308,32 +234,21 @@ export default function Home() {
                     className="flex overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4"
                   >
                     <div className="flex gap-6">
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Lionel Mendes"
-                          position="Winger"
-                          age={22}
-                          nationality="Portugal"
-                          previousClub="Sporting CP"
-                          transferFee="€20M (Rumored)"
-                          images={["/placeholder.svg?height=400&width=300", "/placeholder.svg?height=400&width=300"]}
-                          rumored
-                          number={7}
-                        />
-                      </div>
-                      <div className="min-w-[280px] snap-start">
-                        <PlayerCard
-                          name="Kylian Mbemba"
-                          position="Forward"
-                          age={21}
-                          nationality="France"
-                          previousClub="Monaco"
-                          transferFee="€25M (Rumored)"
-                          images={["/placeholder.svg?height=400&width=300", "/placeholder.svg?height=400&width=300"]}
-                          rumored
-                          number={10}
-                        />
-                      </div>
+                      {getPlayersByStatus("rumored").map((player) => (
+                        <div key={player.id} className="min-w-[280px] snap-start">
+                          <PlayerCard
+                            name={player.name}
+                            position={player.position}
+                            age={player.age}
+                            nationality={player.nationality}
+                            previousClub={player.previousClub || ""}
+                            transferFee={player.transferFee}
+                            images={player.images}
+                            rumored={player.rumored}
+                            number={player.number}
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <ScrollButtons scrollContainerId="rumored-scroll" />
@@ -381,6 +296,25 @@ export default function Home() {
               />
             ))}
           </div>
+        </section>
+
+        {/* Photo Gallery Section */}
+        <section className="container py-12 md:py-16 lg:py-20">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row mb-8">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Photo Gallery</h2>
+              <p className="mt-2 text-muted-foreground">
+                Capturing the beautiful moments of Joga Bonito FC on and off the pitch
+              </p>
+            </div>
+            <Button variant="outline" className="gap-2 border-club-gold hover:bg-club-gold hover:text-black" asChild>
+              <Link href="/media/photos">
+                View All Photos
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <FeaturedPhotos photos={featuredPhotos} />
         </section>
 
         <section className="bg-club-red/10 py-12 md:py-16 lg:py-20 dark:bg-club-red/20">

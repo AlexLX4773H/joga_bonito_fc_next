@@ -39,14 +39,14 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 
 # Expose the port Next.js runs on
-EXPOSE 4000
+EXPOSE 3000
 
 # Start the Next.js server
 CMD ["pnpm", "start"]
 ```
 ```
 docker build -t nextjs-app .
-docker run -p 4000:4000 nextjs-app
+docker run -p 3000:3000 nextjs-app
 ```
 To run locally:
 
